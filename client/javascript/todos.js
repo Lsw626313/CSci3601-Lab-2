@@ -7,15 +7,17 @@ function getAllTodos() {
 }
 
 function go() {
-  get(document.getElementById('api').value, function (returned_json) {
+  var api = document.getElementById('api').value;
+
+  console.log("Getting:" + api);
+
+  get(api, function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
 
 function filter() {
   console.log("Getting filters");
-
-  var api = document.getElementById('api').value;
 
   var owner = document.getElementById('owner').value;
 

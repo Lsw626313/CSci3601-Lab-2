@@ -53,7 +53,7 @@ public class TodoDatabase {
     return Arrays.stream(todos).filter(x -> x.owner.equals(targetOwner)).toArray(Todo[]::new);
   }
 
-  private Todo[] filterTodosByStatus(Todo[] todos, String status) {
+  public Todo[] filterTodosByStatus(Todo[] todos, String status) {
     if (status.equals("complete"))
       return Arrays.stream(todos).filter(x -> x.status).toArray(Todo[]::new);
     if (status.equals("incomplete"))
