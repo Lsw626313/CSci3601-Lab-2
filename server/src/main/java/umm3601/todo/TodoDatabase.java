@@ -25,10 +25,10 @@ public class TodoDatabase {
   public Todo[] listTodos(Map<String, String[]>  queryParams) {
     Todo[] filteredTodos = allTodos;
 
-//    if (queryParams.containsKey("owner")) {
-//      String targetOwner = queryParams.get("owner")[0];
-//      filteredTodos = filterTodosByOwner(filteredTodos, targetOwner);
-//    }
+    if (queryParams.containsKey("owner")) {
+      String targetOwner = queryParams.get("owner")[0];
+      filteredTodos = filterTodosByOwner(filteredTodos, targetOwner);
+    }
 
     if (queryParams.containsKey("limit")) {
       int limit = Integer.parseInt(queryParams.get("limit")[0]);
@@ -38,9 +38,9 @@ public class TodoDatabase {
     return filteredTodos;
   }
 
-//  public Todo[] filterTodosByOwner(Todo[] todos, String targetOwner) {
-//    return Arrays.stream(todos).filter(x -> x.owner.equals(targetOwner)).toArray(Todo[]::new);
-//  }
+  public Todo[] filterTodosByOwner(Todo[] todos, String targetOwner) {
+    return Arrays.stream(todos).filter(x -> x.owner.equals(targetOwner)).toArray(Todo[]::new);
+  }
 
   public Todo[] filterTodosByLimit(Todo[] todos, int limit) {
     return Arrays.copyOf(todos, Math.min(limit, todos.length));

@@ -11,7 +11,7 @@ import static junit.framework.TestCase.assertEquals;
 public class GetTodoByLimitedNumber {
 
   @Test
-  public void getZero() throws IOException {
+  public void filterTodoByLimit() throws IOException {
     TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
 
@@ -26,7 +26,7 @@ public class GetTodoByLimitedNumber {
   }
 
   @Test
-  public void getSeven() throws IOException {
+  public void ListTodoByLimitFilter() throws IOException {
     TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
     Map<String, String[]> queryParams = new HashMap<>();
 
