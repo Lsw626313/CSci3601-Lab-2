@@ -6,18 +6,23 @@ function getAllTodos() {
   });
 }
 
-function getTodosLimitedNumber() {
-  console.log("Getting todos with a maximum number.");
+function filter() {
 
-  get("/api/todos?limit=" + document.getElementById("limit").value, function (returned_json) {
-    document.getElementById('jsonDump').innerHTML = returned_json;
-  });
-}
+  console.log("Getting filters.");
 
-function getTodosByOwner() {
-  console.log("Getting todos with a owner.");
+  var owner = document.getElementById('owner').value;
 
-  get("/api/todos?owner=" + document.getElementById("owner").value, function (returned_json) {
+  var limit = document.getElementById('limit').value;
+
+  var aurl = "/api/todos?";
+
+  if (owner !== "") {aurl += "owner=" + owner + "&"}
+
+  if (limit !== "") {aurl += "limit=" + limit + "&"}
+
+  console.log("Getting aurl:" + aurl);
+
+  get(aurl, function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }

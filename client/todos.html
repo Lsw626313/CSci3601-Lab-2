@@ -14,12 +14,14 @@
 
 <p>
   <label for="owner">owner:</label><input id="owner" type="text" name="owner">
-  <button type="button" id="getTodosByOwner"> get todos by owner's name</button>
 </p>
 
 <p>
-<label for="limit">limit:</label><input id="limit" type="text" name="limit">
-<button type="button" id="getTodosLimitedNumber"> get todos by maximum number</button>
+  <label for="limit">limit:</label><input id="limit" type="text" name="limit">
+</p>
+
+<p>
+<button type="button" id="filter"> Filter</button>
 </p>
 
 <div id="jsonDump" style="margin-top:20px"> Json will go here</div>
@@ -31,11 +33,8 @@
         var element = document.getElementById('getAll');
         element.addEventListener("click", getAllTodos, true);
 
-        element = document.getElementById('getTodosLimitedNumber');
-        element.addEventListener("click", getTodosLimitedNumber, true);
-
-        element = document.getElementById('getTodosByOwner');
-        element.addEventListener("click", getTodosByOwner, true);
+        element = document.getElementById('filter');
+        element.addEventListener("click", filter, true);
     }
 </script>
 </body>
