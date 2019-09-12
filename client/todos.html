@@ -14,8 +14,15 @@
 
 <div id="jsonDump" style="margin-top:20px"> Json will go here</div>
 
+<p>
 <label for="limit">limit:</label><input id="limit" type="text" name="limit">
 <button type="button" id="getTodosLimitedNumber"> get todos by maximum number</button>
+</p>
+
+<p>
+<label for="owner">owner:</label><input id="owner" type="text" name="owner">
+<button type="button" id="getTodosByOwner"> get todos by owner's name</button>
+</p>
 
 <script>
     window.onload = function () {
@@ -26,6 +33,9 @@
 
         element = document.getElementById('getTodosLimitedNumber');
         element.addEventListener("click", getTodosLimitedNumber, true);
+
+        element = document.getElementById('getTodosByOwner');
+        element.addEventListener("click", getTodosByOwner, true);
     }
 </script>
 </body>
