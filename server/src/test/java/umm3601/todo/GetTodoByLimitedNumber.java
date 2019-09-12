@@ -36,10 +36,10 @@ public class GetTodoByLimitedNumber {
 
     queryParams.put("limit", new String[]{"100"});
     Todo[] aHundredTodos = db.listTodos(queryParams);
-    assertEquals("Incorrect number of users with age 100", 100, aHundredTodos.length);
+    assertEquals("Incorrect number of todos with age 100", 100, aHundredTodos.length);
 
     queryParams.put("limit", new String[]{"400"});
     Todo[] fourHundredTodos = db.listTodos(queryParams);
-    assertEquals("Incorrect number of users with age 400", 300, fourHundredTodos.length);
+    assertEquals("Incorrect number of todos with age 400", 300, fourHundredTodos.length);
   }
 }
