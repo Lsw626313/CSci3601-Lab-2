@@ -5,11 +5,3 @@ function getAllTodos() {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
-
-function getTodosLimitedNumber() {
-  console.log("Getting todos with a maximum number.");
-
-  get("/api/todos?limit=" + document.getElementById("limit").value, function (returned_json) {
-    document.getElementById('jsonDump').innerHTML = returned_json;
-  });
-}
