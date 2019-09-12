@@ -15,13 +15,13 @@ public class GetTodoByBodyContent {
     TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
 
-    Todo[] completeTodos = db.filterTodosByStatus(allTodos, "complete");
-    assertEquals("Incorrect sorting of complete todos", 143, completeTodos.length);
+    Todo[] veniamTodos = db.filterTodosByStrContained(allTodos, "veniam");
+    assertEquals("Incorrect number of veniam todos", 70, veniamTodos.length);
 
-    Todo[] incompleteTodo = db.filterTodosByStatus(allTodos, "incomplete");
-    assertEquals("Incorrect number of incomplete todos", 157, incompleteTodo.length);
+    Todo[] exercitationTodo = db.filterTodosByStrContained(allTodos, "exercitation");
+    assertEquals("Incorrect number of exercitation todos", 87, exercitationTodo.length);
 
-    Todo[] unknownTodo = db.filterTodosByStatus(allTodos, "UNKNOWN");
+    Todo[] unknownTodo = db.filterTodosByStrContained(allTodos, "UNKNOWN");
     assertEquals("Incorrect number of UNKNOWN todos", 0, unknownTodo.length);
   }
 
@@ -30,13 +30,13 @@ public class GetTodoByBodyContent {
     TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
     Map<String,String[]> queryParams = new HashMap<>();
 
-    queryParams.put("contains", new String[]{"complete"});
-    Todo[] completeTodos = db.listTodos(queryParams);
-    assertEquals("Incorrect sorting of complete todos", 143, completeTodos.length);
+    queryParams.put("contains", new String[]{"veniam"});
+    Todo[] veniamTodos = db.listTodos(queryParams);
+    assertEquals("Incorrect number of veniam todos", 70, veniamTodos.length);
 
-    queryParams.put("contains", new String[]{"incomplete"});
-    Todo[] incompleteTodo = db.listTodos(queryParams);
-    assertEquals("Incorrect number of incomplete todos", 157, incompleteTodo.length);
+    queryParams.put("contains", new String[]{"exercitation"});
+    Todo[] exercitationTodo = db.listTodos(queryParams);
+    assertEquals("Incorrect number of exercitation todos", 87, exercitationTodo.length);
 
     queryParams.put("contains", new String[]{"UNKNOWN"});
     Todo[] unknownTodo = db.listTodos(queryParams);

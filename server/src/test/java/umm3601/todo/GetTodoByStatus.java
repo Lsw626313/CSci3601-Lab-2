@@ -16,7 +16,7 @@ public class GetTodoByStatus {
     Todo[] allTodos = db.listTodos(new HashMap<>());
 
     Todo[] completeTodos = db.filterTodosByStatus(allTodos, "complete");
-    assertEquals("Incorrect sorting of complete todos", 143, completeTodos.length);
+    assertEquals("Incorrect number of complete todos", 143, completeTodos.length);
 
     Todo[] incompleteTodo = db.filterTodosByStatus(allTodos, "incomplete");
     assertEquals("Incorrect number of incomplete todos", 157, incompleteTodo.length);
@@ -32,7 +32,7 @@ public class GetTodoByStatus {
 
     queryParams.put("status", new String[]{"complete"});
     Todo[] completeTodos = db.listTodos(queryParams);
-    assertEquals("Incorrect sorting of complete todos", 143, completeTodos.length);
+    assertEquals("Incorrect number of complete todos", 143, completeTodos.length);
 
     queryParams.put("status", new String[]{"incomplete"});
     Todo[] incompleteTodo = db.listTodos(queryParams);

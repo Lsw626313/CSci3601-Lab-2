@@ -54,7 +54,7 @@ public class TodoDatabase {
     return filteredTodos;
   }
 
-  private Todo[] filterTodosByStrContained(Todo[] todos, String strContained) {
+  public Todo[] filterTodosByStrContained(Todo[] todos, String strContained) {
     return Arrays.stream(todos).filter(x -> x.body.contains(strContained)).toArray(Todo[]::new);
   }
 
