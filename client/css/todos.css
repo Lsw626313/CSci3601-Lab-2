@@ -1,9 +1,19 @@
 body {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.618;
   max-width: 38em;
   margin: auto;
-  color: #4a4a4a;
-  background-color: #f9f9f9;
+  color: #ccc;
+  background-color: #303030;
   padding: 13px;
+  font-family: Consolas, serif;
+}
+
+#filter, #getAll {
+  float: right;
+  padding: 0.5em;
+  margin: 5px;
+  font-size: 1rem;
+  font-family: Consolas, serif;
+  border-radius: 0.75em;
 }

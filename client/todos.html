@@ -8,23 +8,37 @@
   <script type="text/javascript" src="javascript/todos.js"></script>
 </head>
 <body>
-<button type="button" id="getAll">Get All Todos</button>
+
+<button type="button" id="getAll" onclick="
+    document.getElementById('owner').value = '';
+    document.getElementById('orderBy').selectedIndex = 0;
+    document.getElementById('limit').value = '';            "> Clear Filters</button>
+
+<button type="button" id="filter"> Find To-dos</button>
+
+<a>
+  <label for="owner"> Todo's Owner:</label><input id="owner" type="text" name="owner">
+</a>
+
+<p>
+  <label for="orderBy"> Order by:</label>
+  <select id="orderBy" name="orderBy">
+    <option value="">Undefined</option>
+    <option value="owner">Owner</option>
+    <option value="status">Status</option>
+    <option value="category">Category</option>
+  </select>
+</p>
+
+<p>
+  <label  for="limit"> Density:</label>
+  <input class="density" id="limit" type="number" min="0" max="300" name="limit">
+  <label class="density" for="limit">results per page</label>
+</p>
 
 <hr/>
 
-<p>
-  <label for="owner">owner:</label><input id="owner" type="text" name="owner">
-</p>
-
-<p>
-  <label for="limit">limit:</label><input id="limit" type="text" name="limit">
-</p>
-
-<p>
-<button type="button" id="filter"> Filter</button>
-</p>
-
-<div id="jsonDump" style="margin-top:20px"> Json will go here</div>
+<div id="jsonDump" style="margin-top:20px"> Click on get all Todos or use filters to request</div>
 
 <script>
     window.onload = function () {

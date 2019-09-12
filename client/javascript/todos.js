@@ -14,11 +14,15 @@ function filter() {
 
   var limit = document.getElementById('limit').value;
 
+  var order = document.getElementById('orderBy').value;
+
   var aurl = "/api/todos?";
 
   if (owner !== "") {aurl += "owner=" + owner + "&"}
 
   if (limit !== "") {aurl += "limit=" + limit + "&"}
+
+  if (order !== "") {aurl += "orderBy=" + order + "&"}
 
   console.log("Getting aurl:" + aurl);
 
