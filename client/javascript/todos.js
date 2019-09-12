@@ -1,11 +1,3 @@
-function getAllTodos() {
-  console.log("Getting all the todos.");
-
-  get("/api/todos", function (returned_json) {
-    document.getElementById('jsonDump').innerHTML = returned_json;
-  });
-}
-
 function filter() {
 
   console.log("Getting filters.");
@@ -16,13 +8,24 @@ function filter() {
 
   var order = document.getElementById('orderBy').value;
 
-  var aurl = "/api/todos?";
+  var aurl = "/api/todos";
 
-  if (owner !== "") {aurl += "owner=" + owner + "&"}
+  if (owner !== "" || limit !== "" || order !== "") {
+    aurl += "?";
 
-  if (limit !== "") {aurl += "limit=" + limit + "&"}
+    if(owner !== "") {
+      aurl += "owner=" + owner + "&"
+    }
 
-  if (order !== "") {aurl += "orderBy=" + order + "&"}
+    if (limit !== "") {
+      aurl += "limit=" + limit + "&"
+    }
+
+    if (order !== "") {
+      aurl += "orderBy=" + order + "&"
+    }
+
+  }
 
   console.log("Getting aurl:" + aurl);
 

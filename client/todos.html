@@ -9,16 +9,9 @@
 </head>
 <body>
 
-<button type="button" id="getAll" onclick="
-    document.getElementById('owner').value = '';
-    document.getElementById('orderBy').selectedIndex = 0;
-    document.getElementById('limit').value = '';            "> Clear Filters</button>
-
-<button type="button" id="filter"> Find To-dos</button>
-
-<a>
-  <label for="owner"> Todo's Owner:</label><input id="owner" type="text" name="owner">
-</a>
+<p>
+  <label for="owner"> To-Do's Owner:</label><input id="owner" type="text" name="owner">
+</p>
 
 <p>
   <label for="orderBy"> Order by:</label>
@@ -36,16 +29,22 @@
   <label class="density" for="limit">results per page</label>
 </p>
 
+<p>
+  <button type="button" id="filter"> FIND TO-DOs</button>
+
+  <button type="button" id="getAll" onclick="
+  document.getElementById('owner').value = '';
+  document.getElementById('orderBy').selectedIndex = 0;
+  document.getElementById('limit').value = '';"> CLEAR FILTERs</button>
+</p>
+
 <hr/>
 
-<div id="jsonDump" style="margin-top:20px"> Click on get all Todos or use filters to request</div>
+<div id="jsonDump" style="margin-top:20px"> Please click on "FIND TO-DOs" to continue. </div>
 
 <script>
     window.onload = function () {
-        console.log("The page is loaded now!");
-
-        var element = document.getElementById('getAll');
-        element.addEventListener("click", getAllTodos, true);
+        console.log("The page is loaded");
 
         element = document.getElementById('filter');
         element.addEventListener("click", filter, true);

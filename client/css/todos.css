@@ -1,5 +1,5 @@
 body {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.618;
   max-width: 38em;
   margin: auto;
@@ -7,13 +7,36 @@ body {
   background-color: #303030;
   padding: 13px;
   font-family: Consolas, serif;
+  word-break: break-word;
+}
+
+p {
+  margin: 10px 0;
+}
+
+p:nth-child(4) {
+  margin: 0;
 }
 
 #filter, #getAll {
-  float: right;
-  padding: 0.5em;
-  margin: 5px;
-  font-size: 1rem;
+  right: 0;
+  padding: 0.7em 0;
+  color: #ccc;
+  background-color: unset;
+  border: unset;
+  margin: 0;
+  text-decoration: underline;
+  width: 18.5em;
+  font-size: 1.2rem;
   font-family: Consolas, serif;
-  border-radius: 0.75em;
+  font-weight: bold;
+  transition: color .2s;
+}
+
+#filter {
+  color: #5187df;
+}
+
+#filter:hover {
+  color: #cc82c6;
 }
