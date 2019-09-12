@@ -9,14 +9,31 @@
 </head>
 <body>
 
+
 <p>
-  <label for="owner"> To-Do's Owner:</label><input id="owner" type="text" name="owner">
+  <label for="api"> To filter, input an api request here:</label><input id="api" type="text" name="api" value="api/todos?">
+  <button type="button" id="go"> GO</button>
+</p>
+
+<p> ------ or select your filters ------ </p>
+
+<p>
+  <label for="owner"> Owner:</label><input id="owner" type="text" name="owner">
+</p>
+
+<p>
+  <label for="status"> Status:</label>
+  <select id="status" name="status">
+    <option value="">Select a status</option>
+    <option value="completed">complete</option>
+    <option value="incomplete">Incomplete</option>
+  </select>
 </p>
 
 <p>
   <label for="orderBy"> Order by:</label>
   <select id="orderBy" name="orderBy">
-    <option value="">Select</option>
+    <option value="">Select an order</option>
     <option value="owner">Owner</option>
     <option value="body">Body</option>
     <option value="status">Status</option>
@@ -33,10 +50,13 @@
 <p>
   <button type="button" id="filter"> FIND TO-DOs</button>
 
-  <button type="button" id="getAll" onclick="
+  <button type="button" id="clear" onclick="
+  document.getElementById('api').value = 'api/todos?';
   document.getElementById('owner').value = '';
   document.getElementById('orderBy').selectedIndex = 0;
   document.getElementById('limit').value = '';"> CLEAR FILTERs</button>
+
+  <button type="button" id="getAll">GET ALL TO-DOs</button>
 </p>
 
 <hr/>
@@ -46,6 +66,12 @@
 <script>
     window.onload = function () {
         console.log("The page is loaded");
+
+        var element = document.getElementById('getAll');
+        element.addEventListener("click", getAllTodos, true);
+
+        element = document.getElementById('go');
+        element.addEventListener("click", go, true);
 
         element = document.getElementById('filter');
         element.addEventListener("click", filter, true);
