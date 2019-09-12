@@ -12,17 +12,17 @@
 
 <hr/>
 
-<div id="jsonDump" style="margin-top:20px"> Json will go here</div>
+<p>
+  <label for="owner">owner:</label><input id="owner" type="text" name="owner">
+  <button type="button" id="getTodosByOwner"> get todos by owner's name</button>
+</p>
 
 <p>
 <label for="limit">limit:</label><input id="limit" type="text" name="limit">
 <button type="button" id="getTodosLimitedNumber"> get todos by maximum number</button>
 </p>
 
-<p>
-<label for="owner">owner:</label><input id="owner" type="text" name="owner">
-<button type="button" id="getTodosByOwner"> get todos by owner's name</button>
-</p>
+<div id="jsonDump" style="margin-top:20px"> Json will go here</div>
 
 <script>
     window.onload = function () {
