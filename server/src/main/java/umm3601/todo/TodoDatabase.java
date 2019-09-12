@@ -32,7 +32,7 @@ public class TodoDatabase {
 
     if (queryParams.containsKey("limit")) {
       int limit = Integer.parseInt(queryParams.get("limit")[0]);
-      filteredTodos = Arrays.copyOf(filteredTodos, Math.min(limit, filteredTodos.length));
+      filteredTodos = filterTodosByLimit(filteredTodos, limit);
     }
 
     return filteredTodos;
@@ -42,4 +42,7 @@ public class TodoDatabase {
 //    return Arrays.stream(todos).filter(x -> x.owner.equals(targetOwner)).toArray(Todo[]::new);
 //  }
 
+  public Todo[] filterTodosByLimit(Todo[] todos, int limit) {
+    return Arrays.copyOf(todos, Math.min(limit, todos.length));
+  }
 }
