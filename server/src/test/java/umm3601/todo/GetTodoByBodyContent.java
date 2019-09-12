@@ -11,7 +11,7 @@ import static junit.framework.TestCase.*;
 public class GetTodoByBodyContent {
 
   @Test
-  public void sortTodo() throws IOException {
+  public void filterTodoByBodyContent() throws IOException {
     TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
 
@@ -26,7 +26,7 @@ public class GetTodoByBodyContent {
   }
 
   @Test
-  public void ListTodoBySortFactor() throws IOException {
+  public void ListTodoByBodyFactor() throws IOException {
     TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
     Map<String,String[]> queryParams = new HashMap<>();
 
