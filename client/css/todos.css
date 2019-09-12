@@ -34,9 +34,13 @@ p:nth-child(4) {
 }
 
 #filter {
-  color: #5187df;
+  animation: ease-in colors .5s alternate-reverse infinite;
 }
 
 #filter:hover {
   color: #cc82c6;
+}
+
+@keyframes colors {
+  from {color: #5187df;} to {color: #ccc;}
 }

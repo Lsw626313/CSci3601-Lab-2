@@ -58,7 +58,7 @@ public class TodoDatabase {
     if (factor.equals("status"))
       return Arrays.stream(todos).sorted(Comparator.comparing(x -> x.status)).toArray(Todo[]::new);
     if (factor.equals("category"))
-      return Arrays.stream(todos).sorted(Comparator.comparing(x -> x.status)).toArray(Todo[]::new);
+      return Arrays.stream(todos).sorted(Comparator.comparing(x -> x.category)).toArray(Todo[]::new);
     return todos;
   }
 }

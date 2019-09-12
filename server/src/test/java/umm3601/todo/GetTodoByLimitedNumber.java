@@ -15,8 +15,8 @@ public class GetTodoByLimitedNumber {
     TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
 
-    Todo[] noTodo = db.filterTodosByLimit(allTodos, 0);
-    assertEquals("Incorrect number of todos with limit 0", 0, noTodo.length);
+    Todo[] emptyTodo = db.filterTodosByLimit(allTodos, 0);
+    assertEquals("Incorrect number of todos with limit 0", 0, emptyTodo.length);
 
     Todo[] aHundredTodos = db.filterTodosByLimit(allTodos, 100);
     assertEquals("Incorrect number of todos with limit 100", 100, aHundredTodos.length);
@@ -31,8 +31,8 @@ public class GetTodoByLimitedNumber {
     Map<String, String[]> queryParams = new HashMap<>();
 
     queryParams.put("limit", new String[]{"0"});
-    Todo[] noTodo = db.listTodos(queryParams);
-    assertEquals("Incorrect number of todos with limit 0", 0, noTodo.length);
+    Todo[] emptyTodo = db.listTodos(queryParams);
+    assertEquals("Incorrect number of todos with limit 0", 0, emptyTodo.length);
 
     queryParams.put("limit", new String[]{"100"});
     Todo[] aHundredTodos = db.listTodos(queryParams);
