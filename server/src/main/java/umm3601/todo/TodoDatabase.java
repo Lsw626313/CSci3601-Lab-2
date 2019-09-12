@@ -30,6 +30,11 @@ public class TodoDatabase {
 //      filteredTodos = filterTodosByOwner(filteredTodos, targetOwner);
 //    }
 
+    if (queryParams.containsKey("limit")) {
+      int limit = Integer.parseInt(queryParams.get("limit")[0]);
+      filteredTodos = Arrays.copyOf(filteredTodos, Math.min(limit, filteredTodos.length));
+    }
+
     return filteredTodos;
   }
 
