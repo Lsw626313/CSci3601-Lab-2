@@ -8,7 +8,7 @@ import java.util.Map;
 
 import static junit.framework.TestCase.*;
 
-public class SortTodos {
+public class SortTodo {
 
   @Test
   public void sortTodo() throws IOException {
@@ -20,6 +20,12 @@ public class SortTodos {
     assertEquals("Incorrect sorting of todos in owner", "Barry", sortTodoByOwner[32].owner);
     assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[284].owner);
     assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[299].owner);
+
+    Todo[] sortTodoByBody = db.sortTodos(allTodos, "body");
+    assertEquals("Incorrect sorting of todos in body", "Ad sint incididunt officia veniam incididunt. Voluptate exercitation eu aliqua laboris occaecat deserunt cupidatat velit nisi sunt mollit sint amet.", sortTodoByBody[0].body);
+    assertEquals("Incorrect sorting of todos in body", "Commodo incididunt quis enim adipisicing incididunt veniam voluptate aute quis enim. Quis commodo commodo proident laborum aliqua.", sortTodoByBody[32].body);
+    assertEquals("Incorrect sorting of todos in body", "Velit irure adipisicing non tempor eiusmod reprehenderit. Id voluptate ea veniam fugiat esse nulla consequat.", sortTodoByBody[284].body);
+    assertEquals("Incorrect sorting of todos in body", "Voluptate sit velit occaecat pariatur. Qui adipisicing ipsum incididunt laborum.", sortTodoByBody[299].body);
 
     Todo[] sortTodoByStatus = db.sortTodos(allTodos, "status");
     assertFalse("Incorrect sorting of todos in status", sortTodoByStatus[0].status);
@@ -45,6 +51,13 @@ public class SortTodos {
     assertEquals("Incorrect sorting of todos in owner", "Barry", sortTodoByOwner[32].owner);
     assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[284].owner);
     assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[299].owner);
+
+    queryParams.put("orderBy", new String[]{"body"});
+    Todo[] sortTodoByBody = db.listTodos(queryParams);
+    assertEquals("Incorrect sorting of todos in body", "Ad sint incididunt officia veniam incididunt. Voluptate exercitation eu aliqua laboris occaecat deserunt cupidatat velit nisi sunt mollit sint amet.", sortTodoByBody[0].body);
+    assertEquals("Incorrect sorting of todos in body", "Commodo incididunt quis enim adipisicing incididunt veniam voluptate aute quis enim. Quis commodo commodo proident laborum aliqua.", sortTodoByBody[32].body);
+    assertEquals("Incorrect sorting of todos in body", "Velit irure adipisicing non tempor eiusmod reprehenderit. Id voluptate ea veniam fugiat esse nulla consequat.", sortTodoByBody[284].body);
+    assertEquals("Incorrect sorting of todos in body", "Voluptate sit velit occaecat pariatur. Qui adipisicing ipsum incididunt laborum.", sortTodoByBody[299].body);
 
     queryParams.put("orderBy", new String[]{"status"});
     Todo[] sortTodoByStatus = db.listTodos(queryParams);

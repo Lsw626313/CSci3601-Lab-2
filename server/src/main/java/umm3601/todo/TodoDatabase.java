@@ -55,6 +55,8 @@ public class TodoDatabase {
   public Todo[] sortTodos(Todo[] todos, String factor) {
     if (factor.equals("owner"))
       return Arrays.stream(todos).sorted(Comparator.comparing(x -> x.owner)).toArray(Todo[]::new);
+    if (factor.equals("body"))
+      return Arrays.stream(todos).sorted(Comparator.comparing(x -> x.body)).toArray(Todo[]::new);
     if (factor.equals("status"))
       return Arrays.stream(todos).sorted(Comparator.comparing(x -> x.status)).toArray(Todo[]::new);
     if (factor.equals("category"))

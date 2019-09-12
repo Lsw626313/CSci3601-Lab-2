@@ -1,6 +1,6 @@
 function filter() {
 
-  console.log("Getting filters.");
+  console.log("Getting filters");
 
   var owner = document.getElementById('owner').value;
 
