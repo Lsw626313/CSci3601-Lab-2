@@ -23,7 +23,7 @@ public class TodoDatabase {
     return Arrays.stream(allTodos).filter(x -> x._id.equals(id)).findFirst().orElse(null);
   }
 
-  public Todo[] listTodos(Map<String, String[]>  queryParams) {
+  public Todo[] listTodos(Map<String, String[]> queryParams) {
     Todo[] filteredTodos = allTodos;
 
     if (queryParams.containsKey("contains")) {
