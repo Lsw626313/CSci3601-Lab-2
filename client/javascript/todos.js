@@ -19,6 +19,8 @@ function go() {
 function filter() {
   console.log("Getting filters");
 
+  var str =  document.getElementById('str').value;
+
   var owner = document.getElementById('owner').value;
 
   var status = document.getElementById('status').value;
@@ -29,8 +31,12 @@ function filter() {
 
   var aurl = "api/todos";
 
-  if (owner !== "" || status !== "" || limit !== "" || order !== "") {
+  if (str !== "" || owner !== "" || status !== "" || limit !== "" || order !== "") {
     aurl += "?";
+
+    if (str !== "") {
+      aurl += "contains=" + str + "&"
+    }
 
     if (owner !== "") {
       aurl += "owner=" + owner + "&"

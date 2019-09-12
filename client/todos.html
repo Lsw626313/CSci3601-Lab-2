@@ -18,6 +18,10 @@
 <p> ------ or select your filters ------ </p>
 
 <p>
+  <label for="str"> String contained:</label><input id="str" type="text" name="str">
+</p>
+
+<p>
   <label for="owner"> Owner:</label><input id="owner" type="text" name="owner">
 </p>
 
@@ -52,7 +56,9 @@
 
   <button type="button" id="clear" onclick="
   document.getElementById('api').value = 'api/todos?';
+  document.getElementById('str').value = '';
   document.getElementById('owner').value = '';
+  document.getElementById('status').selectedIndex = 0;
   document.getElementById('orderBy').selectedIndex = 0;
   document.getElementById('limit').value = '';"> CLEAR FILTERs</button>
 
