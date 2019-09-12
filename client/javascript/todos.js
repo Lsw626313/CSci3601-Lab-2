@@ -21,6 +21,8 @@ function filter() {
 
   var str =  document.getElementById('str').value;
 
+  var category = document.getElementById('category').value;
+
   var owner = document.getElementById('owner').value;
 
   var status = document.getElementById('status').value;
@@ -31,11 +33,15 @@ function filter() {
 
   var aurl = "api/todos";
 
-  if (str !== "" || owner !== "" || status !== "" || limit !== "" || order !== "") {
+  if (str !== "" || category !== "" || owner !== "" || status !== "" || limit !== "" || order !== "") {
     aurl += "?";
 
     if (str !== "") {
       aurl += "contains=" + str + "&"
+    }
+
+    if (category !== "") {
+      aurl += "category=" + category + "&"
     }
 
     if (owner !== "") {
