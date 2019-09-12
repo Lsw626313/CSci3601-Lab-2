@@ -6,6 +6,7 @@ import umm3601.user.User;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Map;
 
 public class TodoDatabase {
@@ -35,6 +36,11 @@ public class TodoDatabase {
       filteredTodos = filterTodosByLimit(filteredTodos, limit);
     }
 
+    if (queryParams.containsKey("orderBy")) {
+      String factor = queryParams.get("orderBy")[0];
+      filteredTodos = sortTodos(filteredTodos, factor);
+    }
+
     return filteredTodos;
   }
 
@@ -44,5 +50,15 @@ public class TodoDatabase {
 
   public Todo[] filterTodosByLimit(Todo[] todos, int limit) {
     return Arrays.copyOf(todos, Math.min(limit, todos.length));
+  }
+
+  public Todo[] sortTodos(Todo[] todos, String factor) {
+    if (factor.equals("owner"))
+      return Arrays.stream(todos).sorted(Comparator.comparing(x -> x.owner)).toArray(Todo[]::new);
+    if (factor.equals("status"))
+      return Arrays.stream(todos).sorted(Comparator.comparing(x -> x.status)).toArray(Todo[]::new);
+    if (factor.equals("category"))
+      return Arrays.stream(todos).sorted(Comparator.comparing(x -> x.status)).toArray(Todo[]::new);
+    return todos;
   }
 }
