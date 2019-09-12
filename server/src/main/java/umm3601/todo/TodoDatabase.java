@@ -25,16 +25,6 @@ public class TodoDatabase {
   public Todo[] listTodos(Map<String, String[]>  queryParams) {
     Todo[] filteredTodos = allTodos;
 
-//    if (queryParams.containsKey("owner")) {
-//      String targetOwner = queryParams.get("owner")[0];
-//      filteredTodos = filterTodosByOwner(filteredTodos, targetOwner);
-//    }
-
     return filteredTodos;
   }
-
-//  public Todo[] filterTodosByOwner(Todo[] todos, String targetOwner) {
-//    return Arrays.stream(todos).filter(x -> x.owner.equals(targetOwner)).toArray(Todo[]::new);
-//  }
-
 }
