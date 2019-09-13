@@ -12,14 +12,14 @@ public class FullTodoListFromDB {
 
   @Test
   public void totalUserCount() throws IOException {
-    TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
+    Database db = new Database("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
     assertEquals("Incorrect total number of todos", 300, allTodos.length);
   }
 
   @Test
   public void firstUserInFullList() throws IOException {
-    TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
+    Database db = new Database("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
     Todo firstTodo = allTodos[0];
     assertEquals("Incorrect owner", "Blanche", firstTodo.owner);

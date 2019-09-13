@@ -9,11 +9,11 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Map;
 
-public class TodoDatabase {
+public class Database {
 
   private Todo[] allTodos;
 
-  public TodoDatabase(String todoDataFile) throws IOException {
+  public Database(String todoDataFile) throws IOException {
     Gson gson = new Gson();
     FileReader reader = new FileReader(todoDataFile);
     allTodos = gson.fromJson(reader, Todo[].class);

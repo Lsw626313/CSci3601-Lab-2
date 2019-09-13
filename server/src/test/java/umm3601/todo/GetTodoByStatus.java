@@ -12,7 +12,7 @@ public class GetTodoByStatus {
 
   @Test
   public void filterTodoByStatus() throws IOException {
-    TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
+    Database db = new Database("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
 
     Todo[] completeTodos = db.filterTodosByStatus(allTodos, "complete");
@@ -27,7 +27,7 @@ public class GetTodoByStatus {
 
   @Test
   public void ListTodoByStatusFactor() throws IOException {
-    TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
+    Database db = new Database("src/main/data/todos.json");
     Map<String,String[]> queryParams = new HashMap<>();
 
     queryParams.put("status", new String[]{"complete"});
