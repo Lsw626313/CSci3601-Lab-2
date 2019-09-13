@@ -57,7 +57,9 @@
 </p>
 
 <p>
-  <button type="button" id="filter"> FIND TO-DOs</button>
+  <button type="button" id="getAll">GET ALL TO-DOs</button>
+
+  <button type="button" id="filter"> SEARCH TO-DOs</button>
 
   <button type="button" id="clear" onclick="
   document.getElementById('api').value = 'api/todos?';
@@ -67,13 +69,11 @@
   document.getElementById('status').selectedIndex = 0;
   document.getElementById('orderBy').selectedIndex = 0;
   document.getElementById('limit').value = '';"> CLEAR FILTERs</button>
-
-  <button type="button" id="getAll">GET ALL TO-DOs</button>
 </p>
 
 <hr/>
 
-<div id="jsonDump" style="margin-top:20px"> Please click on "FIND TO-DOs" to continue. </div>
+<div id="jsonDump" style="margin-top:20px"> Please click on "SEARCH TO-DOs" to proceed... </div>
 
 <script>
     window.onload = function () {

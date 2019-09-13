@@ -38,12 +38,12 @@ p:nth-child(4) {
 }
 
 @keyframes colors {
-  from {color: #5187df;} to {color: #ccc;}
+  from {color: #8ab4f8;} to {color: #ccc;}
 }
 
 #filter:hover, #clear:hover, #getAll:hover {
   animation: unset;
-  color: #cc82c6;
+  color: #8ab4f8;
 }
 
 input[type=text], select, .density:not(label) {
@@ -56,6 +56,7 @@ input[type=text], select, .density:not(label) {
   border: 1px solid #282c2f;
   border-radius: 20px;
   box-sizing: border-box;
+  font-family: Consolas, serif;
 }
 
 input#api {
@@ -71,6 +72,7 @@ button#go {
   border: 1px solid #282c2f;
   border-radius: 20px;
   box-sizing: border-box;
+  font-family: Consolas, serif;
 }
 
 input[type=text] {
@@ -97,4 +99,8 @@ p:nth-child(2) {
 
 label.density {
   display: unset;
+}
+
+#jsonDump {
+  font-style: italic;
 }
