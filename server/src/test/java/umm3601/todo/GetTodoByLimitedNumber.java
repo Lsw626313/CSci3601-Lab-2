@@ -12,7 +12,7 @@ public class GetTodoByLimitedNumber {
 
   @Test
   public void filterTodoByLimit() throws IOException {
-    TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
+    Database db = new Database("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
 
     Todo[] emptyTodo = db.filterTodosByLimit(allTodos, 0);
@@ -27,7 +27,7 @@ public class GetTodoByLimitedNumber {
 
   @Test
   public void ListTodoByLimitFilter() throws IOException {
-    TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
+    Database db = new Database("src/main/data/todos.json");
     Map<String, String[]> queryParams = new HashMap<>();
 
     queryParams.put("limit", new String[]{"0"});

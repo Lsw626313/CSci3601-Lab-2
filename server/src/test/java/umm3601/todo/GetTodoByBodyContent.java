@@ -12,7 +12,7 @@ public class GetTodoByBodyContent {
 
   @Test
   public void filterTodoByBodyContent() throws IOException {
-    TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
+    Database db = new Database("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
 
     Todo[] veniamTodos = db.filterTodosByStrContained(allTodos, "veniam");
@@ -27,7 +27,7 @@ public class GetTodoByBodyContent {
 
   @Test
   public void ListTodoByBodyFactor() throws IOException {
-    TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
+    Database db = new Database("src/main/data/todos.json");
     Map<String,String[]> queryParams = new HashMap<>();
 
     queryParams.put("contains", new String[]{"veniam"});

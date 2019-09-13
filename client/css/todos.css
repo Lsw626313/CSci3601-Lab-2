@@ -4,7 +4,7 @@ body {
   max-width: 38em;
   margin: auto;
   color: #ccc;
-  background-color: #303030;
+  background-color: #323639;
   padding: 13px;
   font-family: Consolas, serif;
   word-break: break-word;
@@ -37,10 +37,70 @@ p:nth-child(4) {
   animation: ease-in colors .5s alternate-reverse infinite;
 }
 
-#filter:hover {
-  color: #cc82c6;
+@keyframes colors {
+  from {color: #8ab4f8;} to {color: #ccc;}
 }
 
-@keyframes colors {
-  from {color: #5187df;} to {color: #ccc;}
+#filter:hover, #clear:hover, #getAll:hover {
+  animation: unset;
+  color: #8ab4f8;
+}
+
+input[type=text], select, .density:not(label) {
+  color: #ccc;
+  background-color: #282c2f;
+  width: 48%;
+  padding: 8px 15px;
+  margin: 3px 0;
+  display: inline-block;
+  border: 1px solid #282c2f;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-family: Consolas, serif;
+}
+
+input#api {
+  width: 39%;
+}
+
+button#go {
+  color: #ccc;
+  background-color: #282c2f;
+  width: 7.5%;
+  padding: 8px 15px;
+  margin: 3px 0;
+  border: 1px solid #282c2f;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-family: Consolas, serif;
+}
+
+input[type=text] {
+  margin-left: 10px;
+}
+
+.density:not(label) {
+  width: 20%;
+  margin-right: 20px;
+
+}
+
+label {
+  display: inline-block;
+  margin: 0;
+  width: 50%;
+}
+
+p:nth-child(2) {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+label.density {
+  display: unset;
+}
+
+#jsonDump {
+  font-style: italic;
 }

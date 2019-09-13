@@ -12,7 +12,7 @@ public class GetTodoByOwner {
 
   @Test
   public void filterTodoByOwner() throws IOException {
-    TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
+    Database db = new Database("src/main/data/todos.json");
     Todo[] allTodos = db.listTodos(new HashMap<>());
 
     Todo[] blancheTodo = db.filterTodosByOwner(allTodos, "Blanche");
@@ -27,7 +27,7 @@ public class GetTodoByOwner {
 
   @Test
   public void ListTodoByOwnerFilter() throws IOException {
-    TodoDatabase db = new TodoDatabase("src/main/data/todos.json");
+    Database db = new Database("src/main/data/todos.json");
     Map<String, String[]> queryParams = new HashMap<>();
 
     queryParams.put("owner", new String[]{"Blanche"});

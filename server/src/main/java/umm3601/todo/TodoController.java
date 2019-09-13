@@ -5,16 +5,14 @@ import com.google.gson.JsonObject;
 import spark.Request;
 import spark.Response;
 
-import java.io.IOException;
-
 import static umm3601.Util.*;
 
 public class TodoController {
 
   private final Gson gson2;
-  private TodoDatabase database;
+  private Database database;
 
-  public TodoController(TodoDatabase database) {
+  public TodoController(Database database) {
     gson2 = new Gson();
     this.database = database;
   }
