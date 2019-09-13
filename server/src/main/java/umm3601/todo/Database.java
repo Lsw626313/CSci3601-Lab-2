@@ -46,14 +46,14 @@ public class Database {
       filteredTodos = filterTodosByStatus(filteredTodos, status);
     }
 
-    if (queryParams.containsKey("limit")) {
-      int limit = Integer.parseInt(queryParams.get("limit")[0]);
-      filteredTodos = filterTodosByLimit(filteredTodos, limit);
-    }
-
     if (queryParams.containsKey("orderBy")) {
       String factor = queryParams.get("orderBy")[0];
       filteredTodos = sortTodos(filteredTodos, factor);
+    }
+
+    if (queryParams.containsKey("limit")) {
+      int limit = Integer.parseInt(queryParams.get("limit")[0]);
+      filteredTodos = filterTodosByLimit(filteredTodos, limit);
     }
 
     return filteredTodos;
