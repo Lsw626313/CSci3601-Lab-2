@@ -92,8 +92,10 @@ label {
 }
 
 p:nth-child(2) {
+  font-size: 1rem;
   display: block;
   text-align: center;
+  font-style: italic;
 }
 
 label.density {
@@ -101,5 +103,6 @@ label.density {
 }
 
 #jsonDump {
+  font-size: 1rem;
   font-style: italic;
 }
