@@ -1,5 +1,5 @@
 body {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.618;
   max-width: 38em;
   margin: auto;
@@ -27,7 +27,7 @@ p:nth-child(4) {
   margin: 0;
   text-decoration: underline;
   width: 12.1em;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: Consolas, serif;
   font-weight: bold;
   transition: color .2s;
@@ -60,13 +60,13 @@ input[type=text], select, .density:not(label) {
 }
 
 input#api {
-  width: 39%;
+  width: 38.8%;
 }
 
 button#go {
   color: #ccc;
   background-color: #282c2f;
-  width: 7.5%;
+  width: 7.75%;
   padding: 8px 15px;
   margin: 3px 0;
   border: 1px solid #282c2f;
@@ -94,7 +94,6 @@ label {
 p:nth-child(2) {
   display: block;
   text-align: center;
-  text-transform: uppercase;
 }
 
 label.density {
