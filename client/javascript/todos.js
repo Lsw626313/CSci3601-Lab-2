@@ -1,5 +1,5 @@
 function getAllTodos() {
-  console.log("Getting all the todos");
+  console.log("get aURL:/api/todos");
 
   get("/api/todos", function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
@@ -9,7 +9,7 @@ function getAllTodos() {
 function go() {
   var api = document.getElementById('api').value;
 
-  console.log("Getting:" + api);
+  console.log("get aURL:" + api);
 
   get(api, function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
@@ -17,8 +17,6 @@ function go() {
 }
 
 function filter() {
-  console.log("Getting filters");
-
   var str =  document.getElementById('str').value;
 
   var category = document.getElementById('category').value;
@@ -63,7 +61,7 @@ function filter() {
     aurl = aurl.substring(0, aurl.length - 1);
   }
 
-  console.log("Getting aurl:" + aurl);
+  console.log("get aUrl:" + aurl);
 
   get(aurl, function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
