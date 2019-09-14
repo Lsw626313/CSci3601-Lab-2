@@ -9,7 +9,7 @@ function getAllTodos() {
 function go() {
   var api = document.getElementById('api').value;
 
-  console.log("get aURL:" + api);
+  console.log("get aUrl:" + api);
 
   get(api, function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
