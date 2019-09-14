@@ -1,5 +1,5 @@
 body {
-  font-size: 1rem;
+  font-size: 1em;
   line-height: 1.618;
   max-width: 38em;
   margin: auto;
@@ -27,23 +27,23 @@ p:nth-child(4) {
   margin: 0;
   text-decoration: underline;
   width: 12.1em;
-  font-size: 1rem;
+  font-size: 1em;
   font-family: Consolas, serif;
   font-weight: bold;
   transition: color .2s;
 }
 
 #filter {
-  animation: ease-in colors .5s alternate-reverse infinite;
+  animation: ease-in colors 1s alternate-reverse infinite;
 }
 
 @keyframes colors {
-  from {color: #8ab4f8;} to {color: #ccc;}
+  from {color: #93cdab;} to {color: #F7F4ED;}
 }
 
 #filter:hover, #clear:hover, #getAll:hover {
   animation: unset;
-  color: #8ab4f8;
+  color: #F7F4ED;
 }
 
 input[type=text], select, .density:not(label) {
@@ -61,6 +61,10 @@ input[type=text], select, .density:not(label) {
 
 input#api {
   width: 38.8%;
+}
+
+button:focus, input:focus, select:focus {
+  outline:0;
 }
 
 button#go {
@@ -92,7 +96,7 @@ label {
 }
 
 p:nth-child(2) {
-  font-size: 1rem;
+  font-size: 1em;
   display: block;
   text-align: center;
   font-style: italic;
@@ -103,6 +107,10 @@ label.density {
 }
 
 #jsonDump {
-  font-size: 1rem;
+  font-size: .9em;
   font-style: italic;
+  background-color: #282c2f;
+  border: unset;
+  padding: 8px 20px;
+  border-radius: 20px;
 }
