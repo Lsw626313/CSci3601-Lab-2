@@ -1,7 +1,7 @@
 function getAllTodos() {
-  console.log("get aURL:/api/todos");
+  console.log("get aUrl:api/todos");
 
-  get("/api/todos", function (returned_json) {
+  get("api/todos", function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
