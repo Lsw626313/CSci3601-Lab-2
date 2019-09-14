@@ -80,7 +80,7 @@ public class Database {
   }
 
   public Todo[] filterTodosByLimit(Todo[] todos, int limit) {
-    return Arrays.copyOf(todos, Math.min(limit, todos.length));
+    return Arrays.stream(todos).limit(limit).toArray(Todo[]::new);
   }
 
   public Todo[] sortTodos(Todo[] todos, String factor) {
