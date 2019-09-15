@@ -17,9 +17,13 @@ public class GetTodoByBodyContent {
 
     Todo[] veniamTodos = db.filterTodosByStrContained(allTodos, "veniam");
     assertEquals("Incorrect number of veniam todos", 70, veniamTodos.length);
+    assertEquals("Incorrect id of veniam todos", "58895985c1849992336c219b", veniamTodos[0]._id);
+    assertEquals("Incorrect id of veniam todos", "588959856b2259d62afcebf4", veniamTodos[69]._id);
 
     Todo[] exercitationTodo = db.filterTodosByStrContained(allTodos, "exercitation");
     assertEquals("Incorrect number of exercitation todos", 87, exercitationTodo.length);
+    assertEquals("Incorrect id of exercitation todos", "58895985186754887e0381f5", exercitationTodo[0]._id);
+    assertEquals("Incorrect id of exercitation todos", "588959856b2259d62afcebf4", exercitationTodo[86]._id);
 
     Todo[] unknownTodo = db.filterTodosByStrContained(allTodos, "UNKNOWN");
     assertEquals("Incorrect number of UNKNOWN todos", 0, unknownTodo.length);
@@ -33,10 +37,14 @@ public class GetTodoByBodyContent {
     queryParams.put("contains", new String[]{"veniam"});
     Todo[] veniamTodos = db.listTodos(queryParams);
     assertEquals("Incorrect number of veniam todos", 70, veniamTodos.length);
+    assertEquals("Incorrect id of veniam todos", "58895985c1849992336c219b", veniamTodos[0]._id);
+    assertEquals("Incorrect id of veniam todos", "588959856b2259d62afcebf4", veniamTodos[69]._id);
 
     queryParams.put("contains", new String[]{"exercitation"});
     Todo[] exercitationTodo = db.listTodos(queryParams);
     assertEquals("Incorrect number of exercitation todos", 87, exercitationTodo.length);
+    assertEquals("Incorrect id of exercitation todos", "58895985186754887e0381f5", exercitationTodo[0]._id);
+    assertEquals("Incorrect id of exercitation todos", "588959856b2259d62afcebf4", exercitationTodo[86]._id);
 
     queryParams.put("contains", new String[]{"UNKNOWN"});
     Todo[] unknownTodo = db.listTodos(queryParams);

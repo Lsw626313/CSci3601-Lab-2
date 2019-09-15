@@ -1,5 +1,5 @@
 function getAllTodos() {
-  console.log("get aUrl:api/todos");
+  console.log("GET api/todos");
 
   get("api/todos", function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
@@ -9,7 +9,7 @@ function getAllTodos() {
 function go() {
   var api = document.getElementById('api').value;
 
-  console.log("get aUrl:" + api);
+  console.log("GET " + api);
 
   get(api, function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
@@ -34,29 +34,17 @@ function filter() {
   if (str !== "" || category !== "" || owner !== "" || status !== "" || limit !== "" || order !== "") {
     aurl += "?";
 
-    if (str !== "") {
-      aurl += "contains=" + str + "&"
-    }
+    if (str !== "") aurl += `contains=${str}&`;
 
-    if (category !== "") {
-      aurl += "category=" + category + "&"
-    }
+    if (category !== "") aurl += `category=${category}&`;
 
-    if (owner !== "") {
-      aurl += "owner=" + owner + "&"
-    }
+    if (owner !== "") aurl += `owner=${owner}&`;
 
-    if (status !== "") {
-      aurl += "status=" + status + "&"
-    }
+    if (status !== "") aurl += `status=${status}&`;
 
-    if (limit !== "") {
-      aurl += "limit=" + limit + "&"
-    }
+    if (limit !== "") aurl += `limit=${limit}&`;
 
-    if (order !== "") {
-      aurl += "orderBy=" + order + "&"
-    }
+    if (order !== "") aurl += `orderBy=${order}&`;
 
     aurl = aurl.substring(0, aurl.length - 1);
   }

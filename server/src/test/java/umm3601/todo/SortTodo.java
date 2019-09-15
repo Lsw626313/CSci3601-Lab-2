@@ -17,26 +17,34 @@ public class SortTodo {
 
     Todo[] sortTodoByOwner = db.sortTodos(allTodos, "owner");
     assertEquals("Incorrect sorting of todos in owner", "Barry", sortTodoByOwner[0].owner);
-    assertEquals("Incorrect sorting of todos in owner", "Barry", sortTodoByOwner[32].owner);
-    assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[284].owner);
+    assertEquals("Incorrect sorting of todos in owner", "Barry", sortTodoByOwner[1].owner);
+    assertEquals("Incorrect sorting of todos in owner", "Barry", sortTodoByOwner[2].owner);
+    assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[297].owner);
+    assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[298].owner);
     assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[299].owner);
 
     Todo[] sortTodoByBody = db.sortTodos(allTodos, "body");
     assertEquals("Incorrect sorting of todos in body", "Ad sint incididunt officia veniam incididunt. Voluptate exercitation eu aliqua laboris occaecat deserunt cupidatat velit nisi sunt mollit sint amet.", sortTodoByBody[0].body);
-    assertEquals("Incorrect sorting of todos in body", "Commodo incididunt quis enim adipisicing incididunt veniam voluptate aute quis enim. Quis commodo commodo proident laborum aliqua.", sortTodoByBody[32].body);
-    assertEquals("Incorrect sorting of todos in body", "Velit irure adipisicing non tempor eiusmod reprehenderit. Id voluptate ea veniam fugiat esse nulla consequat.", sortTodoByBody[284].body);
+    assertEquals("Incorrect sorting of todos in body", "Ad sit Lorem magna consectetur ut sit sunt aliquip. Ullamco quis quis commodo irure do nostrud anim sit commodo consequat.", sortTodoByBody[1].body);
+    assertEquals("Incorrect sorting of todos in body", "Adipisicing anim ad sunt esse consectetur ipsum sint fugiat. Et minim nulla id amet.", sortTodoByBody[2].body);
+    assertEquals("Incorrect sorting of todos in body", "Voluptate et tempor amet proident nisi cupidatat aute consectetur elit deserunt occaecat est tempor. Ullamco aliqua quis excepteur ad deserunt labore sit tempor dolore ipsum ut aute nostrud.", sortTodoByBody[297].body);
+    assertEquals("Incorrect sorting of todos in body", "Voluptate mollit laboris ipsum veniam non id pariatur amet. Enim id irure est amet veniam ipsum.", sortTodoByBody[298].body);
     assertEquals("Incorrect sorting of todos in body", "Voluptate sit velit occaecat pariatur. Qui adipisicing ipsum incididunt laborum.", sortTodoByBody[299].body);
 
     Todo[] sortTodoByStatus = db.sortTodos(allTodos, "status");
     assertFalse("Incorrect sorting of todos in status", sortTodoByStatus[0].status);
-    assertFalse("Incorrect sorting of todos in status", sortTodoByStatus[32].status);
-    assertTrue("Incorrect sorting of todos in status", sortTodoByStatus[284].status);
+    assertFalse("Incorrect sorting of todos in status", sortTodoByStatus[1].status);
+    assertFalse("Incorrect sorting of todos in status", sortTodoByStatus[2].status);
+    assertTrue("Incorrect sorting of todos in status", sortTodoByStatus[297].status);
+    assertTrue("Incorrect sorting of todos in status", sortTodoByStatus[298].status);
     assertTrue("Incorrect sorting of todos in status", sortTodoByStatus[299].status);
 
     Todo[] sortTodoByCategory = db.sortTodos(allTodos, "category");
     assertEquals("Incorrect sorting of todos in category", "groceries", sortTodoByCategory[0].category);
-    assertEquals("Incorrect sorting of todos in category", "groceries", sortTodoByCategory[32].category);
-    assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[284].category);
+    assertEquals("Incorrect sorting of todos in category", "groceries", sortTodoByCategory[1].category);
+    assertEquals("Incorrect sorting of todos in category", "groceries", sortTodoByCategory[2].category);
+    assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[297].category);
+    assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[298].category);
     assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[299].category);
   }
 
@@ -48,29 +56,37 @@ public class SortTodo {
     queryParams.put("orderBy", new String[]{"owner"});
     Todo[] sortTodoByOwner = db.listTodos(queryParams);
     assertEquals("Incorrect sorting of todos in owner", "Barry", sortTodoByOwner[0].owner);
-    assertEquals("Incorrect sorting of todos in owner", "Barry", sortTodoByOwner[32].owner);
-    assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[284].owner);
+    assertEquals("Incorrect sorting of todos in owner", "Barry", sortTodoByOwner[1].owner);
+    assertEquals("Incorrect sorting of todos in owner", "Barry", sortTodoByOwner[2].owner);
+    assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[297].owner);
+    assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[298].owner);
     assertEquals("Incorrect sorting of todos in owner", "Workman", sortTodoByOwner[299].owner);
 
     queryParams.put("orderBy", new String[]{"body"});
     Todo[] sortTodoByBody = db.listTodos(queryParams);
     assertEquals("Incorrect sorting of todos in body", "Ad sint incididunt officia veniam incididunt. Voluptate exercitation eu aliqua laboris occaecat deserunt cupidatat velit nisi sunt mollit sint amet.", sortTodoByBody[0].body);
-    assertEquals("Incorrect sorting of todos in body", "Commodo incididunt quis enim adipisicing incididunt veniam voluptate aute quis enim. Quis commodo commodo proident laborum aliqua.", sortTodoByBody[32].body);
-    assertEquals("Incorrect sorting of todos in body", "Velit irure adipisicing non tempor eiusmod reprehenderit. Id voluptate ea veniam fugiat esse nulla consequat.", sortTodoByBody[284].body);
+    assertEquals("Incorrect sorting of todos in body", "Ad sit Lorem magna consectetur ut sit sunt aliquip. Ullamco quis quis commodo irure do nostrud anim sit commodo consequat.", sortTodoByBody[1].body);
+    assertEquals("Incorrect sorting of todos in body", "Adipisicing anim ad sunt esse consectetur ipsum sint fugiat. Et minim nulla id amet.", sortTodoByBody[2].body);
+    assertEquals("Incorrect sorting of todos in body", "Voluptate et tempor amet proident nisi cupidatat aute consectetur elit deserunt occaecat est tempor. Ullamco aliqua quis excepteur ad deserunt labore sit tempor dolore ipsum ut aute nostrud.", sortTodoByBody[297].body);
+    assertEquals("Incorrect sorting of todos in body", "Voluptate mollit laboris ipsum veniam non id pariatur amet. Enim id irure est amet veniam ipsum.", sortTodoByBody[298].body);
     assertEquals("Incorrect sorting of todos in body", "Voluptate sit velit occaecat pariatur. Qui adipisicing ipsum incididunt laborum.", sortTodoByBody[299].body);
 
     queryParams.put("orderBy", new String[]{"status"});
     Todo[] sortTodoByStatus = db.listTodos(queryParams);
     assertFalse("Incorrect sorting of todos in status", sortTodoByStatus[0].status);
-    assertFalse("Incorrect sorting of todos in status", sortTodoByStatus[32].status);
-    assertTrue("Incorrect sorting of todos in status", sortTodoByStatus[284].status);
+    assertFalse("Incorrect sorting of todos in status", sortTodoByStatus[1].status);
+    assertFalse("Incorrect sorting of todos in status", sortTodoByStatus[2].status);
+    assertTrue("Incorrect sorting of todos in status", sortTodoByStatus[297].status);
+    assertTrue("Incorrect sorting of todos in status", sortTodoByStatus[298].status);
     assertTrue("Incorrect sorting of todos in status", sortTodoByStatus[299].status);
 
     queryParams.put("orderBy", new String[]{"category"});
     Todo[] sortTodoByCategory = db.listTodos(queryParams);
     assertEquals("Incorrect sorting of todos in category", "groceries", sortTodoByCategory[0].category);
-    assertEquals("Incorrect sorting of todos in category", "groceries", sortTodoByCategory[32].category);
-    assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[284].category);
+    assertEquals("Incorrect sorting of todos in category", "groceries", sortTodoByCategory[1].category);
+    assertEquals("Incorrect sorting of todos in category", "groceries", sortTodoByCategory[2].category);
+    assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[297].category);
+    assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[298].category);
     assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[299].category);
   }
 }
