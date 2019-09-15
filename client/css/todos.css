@@ -46,7 +46,7 @@ p:nth-child(4) {
   color: #F7F4ED;
 }
 
-input[type=text], select, .density:not(label) {
+input[type=text], select, .limit:not(label) {
   color: #ccc;
   background-color: #282c2f;
   width: 48%;
@@ -84,7 +84,7 @@ input[type=text] {
   margin-left: 10px;
 }
 
-.density:not(label) {
+.limit:not(label) {
   width: 20%;
   margin-right: 15px;
 }
@@ -102,7 +102,7 @@ p:nth-child(2) {
   font-style: italic;
 }
 
-label.density {
+label.limit {
   display: unset;
   font-size: 0.85em;
   padding: 10px 0;
@@ -116,7 +116,7 @@ label.density {
   border: unset;
   padding: 8px 20px;
   border-radius: 20px;
-  margin: 20px 7px 50px 0;
+  margin: 20px 7px 25px 0;
 }
 
 @media screen and (max-width: 635px) {

@@ -1,7 +1,7 @@
 function getAllTodos() {
-  console.log("GET api/todos");
+  console.log("GET /api/todos");
 
-  get("api/todos", function (returned_json) {
+  get("/api/todos", function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
@@ -29,7 +29,7 @@ function filter() {
 
   var order = document.getElementById('orderBy').value;
 
-  var aurl = "api/todos";
+  var aurl = "/api/todos";
 
   if (str !== "" || category !== "" || owner !== "" || status !== "" || limit !== "" || order !== "") {
     aurl += "?";
@@ -42,14 +42,14 @@ function filter() {
 
     if (status !== "") aurl += `status=${status}&`;
 
-    if (limit !== "") aurl += `limit=${limit}&`;
-
     if (order !== "") aurl += `orderBy=${order}&`;
+
+    if (limit !== "") aurl += `limit=${limit}&`;
 
     aurl = aurl.substring(0, aurl.length - 1);
   }
 
-  console.log("get aUrl:" + aurl);
+  console.log("GET " + aurl);
 
   get(aurl, function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
