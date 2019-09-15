@@ -17,9 +17,13 @@ public class GetTodoByStatus {
 
     Todo[] completeTodos = db.filterTodosByStatus(allTodos, "complete");
     assertEquals("Incorrect number of complete todos", 143, completeTodos.length);
+    assertEquals("Incorrect id of complete todos", "58895985ae3b752b124e7663", completeTodos[0]._id);
+    assertEquals("Incorrect id of complete todos", "58895985a69d6afde00af172", completeTodos[142]._id);
 
     Todo[] incompleteTodo = db.filterTodosByStatus(allTodos, "incomplete");
     assertEquals("Incorrect number of incomplete todos", 157, incompleteTodo.length);
+    assertEquals("Incorrect id of incomplete todos", "58895985a22c04e761776d54", incompleteTodo[0]._id);
+    assertEquals("Incorrect id of incomplete todos", "58895985f0a4bbea24084abf", incompleteTodo[156]._id);
 
     Todo[] unknownTodo = db.filterTodosByStatus(allTodos, "UNKNOWN");
     assertEquals("Incorrect number of UNKNOWN todos", 0, unknownTodo.length);
@@ -33,10 +37,14 @@ public class GetTodoByStatus {
     queryParams.put("status", new String[]{"complete"});
     Todo[] completeTodos = db.listTodos(queryParams);
     assertEquals("Incorrect number of complete todos", 143, completeTodos.length);
+    assertEquals("Incorrect id of complete todos", "58895985ae3b752b124e7663", completeTodos[0]._id);
+    assertEquals("Incorrect id of complete todos", "58895985a69d6afde00af172", completeTodos[142]._id);
 
     queryParams.put("status", new String[]{"incomplete"});
     Todo[] incompleteTodo = db.listTodos(queryParams);
     assertEquals("Incorrect number of incomplete todos", 157, incompleteTodo.length);
+    assertEquals("Incorrect id of incomplete todos", "58895985a22c04e761776d54", incompleteTodo[0]._id);
+    assertEquals("Incorrect id of incomplete todos", "58895985f0a4bbea24084abf", incompleteTodo[156]._id);
 
     queryParams.put("status", new String[]{"UNKNOWN"});
     Todo[] unknownTodo = db.listTodos(queryParams);
