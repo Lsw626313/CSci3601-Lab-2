@@ -7,7 +7,7 @@ function getAllTodos() {
 }
 
 function go() {
-  var api = document.getElementById('api').value;
+  var api = '/' + document.getElementById('api').value;
 
   console.log("GET " + api);
 
