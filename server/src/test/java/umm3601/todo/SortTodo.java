@@ -46,6 +46,15 @@ public class SortTodo {
     assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[297].category);
     assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[298].category);
     assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[299].category);
+
+    Todo[] sortTodoByUNKNOWN = db.sortTodos(allTodos, "UNKNOWN");
+    assertEquals("Incorrect number of todos", 300, sortTodoByUNKNOWN.length);
+    Todo firstTodo = sortTodoByUNKNOWN[0];
+    assertEquals("Incorrect id", "58895985a22c04e761776d54", firstTodo._id);
+    assertEquals("Incorrect owner", "Blanche", firstTodo.owner);
+    assertFalse("Incorrect status", firstTodo.status);
+    assertEquals("Incorrect body", "In sunt ex non tempor cillum commodo amet incididunt anim qui commodo quis. Cillum non labore ex sint esse.", firstTodo.body);
+    assertEquals("Incorrect category", "software design", firstTodo.category);
   }
 
   @Test
@@ -88,5 +97,16 @@ public class SortTodo {
     assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[297].category);
     assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[298].category);
     assertEquals("Incorrect sorting of todos in category", "video games", sortTodoByCategory[299].category);
+
+    queryParams.put("orderBy", new String[]{"UNKNOWN"});
+    Todo[] sortTodoByUNKNOWN = db.listTodos(queryParams);
+    assertEquals("Incorrect number of todos", 300, sortTodoByUNKNOWN.length);
+    Todo firstTodo = sortTodoByUNKNOWN[0];
+    assertEquals("Incorrect id", "58895985a22c04e761776d54", firstTodo._id);
+    assertEquals("Incorrect owner", "Blanche", firstTodo.owner);
+    assertFalse("Incorrect status", firstTodo.status);
+    assertEquals("Incorrect body", "In sunt ex non tempor cillum commodo amet incididunt anim qui commodo quis. Cillum non labore ex sint esse.", firstTodo.body);
+    assertEquals("Incorrect category", "software design", firstTodo.category);
+
   }
 }
