@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TO-DOs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search To-dos</title>
   <link rel="stylesheet" type="text/css" href="css/todos.css">
   <script type="text/javascript" src="javascript/util.js"></script>
   <script type="text/javascript" src="javascript/todos.js"></script>
 </head>
 <body>
-
 
 <p>
   <label for="api"> Input an api to filter TO-DOs:</label><input id="api" type="text" name="api" value="api/todos?">
@@ -51,9 +51,9 @@
 </p>
 
 <p>
-  <label  for="limit"> Density:</label>
-  <input class="density" id="limit" type="number" min="0" max="300" name="limit">
-  <label class="density" for="limit">results per page</label>
+  <label  for="limit"> Limit:</label>
+  <input class="limit" id="limit" type="number" min="0" max="300" name="limit">
+  <label class="limit" for="limit">results per page</label>
 </p>
 
 <p>
@@ -68,15 +68,13 @@
   document.getElementById('owner').value = '';
   document.getElementById('status').selectedIndex = 0;
   document.getElementById('orderBy').selectedIndex = 0;
-  document.getElementById('limit').value = '';"> CLEAR FILTERs</button>
+  document.getElementById('limit').value = '';"> RESET FILTERs</button>
 </p>
 
 <div id="jsonDump" style="margin-top:20px"> Please click on "SEARCH TO-DOs" to proceed... </div>
 
 <script>
     window.onload = function () {
-        console.log("The page is loaded");
-
         var element = document.getElementById('getAll');
         element.addEventListener("click", getAllTodos, true);
 
